@@ -1,0 +1,136 @@
+/* App.css */
+
+  .side-navigation {
+    width: 20vw;
+    background-color: #512796;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+  }
+  .logo {
+    padding: 1rem;
+    text-align: center;
+    margin-top:4vh;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .menu-items {
+    padding-top: 2rem;
+  }
+  
+  .menu-items li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.2s;
+  }
+  
+  .menu-items li:hover {
+    background-color: #7c3aed;
+  }
+  
+
+  
+  .menu-items li a
+  {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    display: none; /* Hide the toggle button by default */
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+  }
+  
+  .icon {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    margin-bottom: 4px;
+    transition: transform 0.2s;
+  }
+  
+  .icon.open {
+    transform: rotate(-45deg);
+  }
+  
+  .icon.open::before,
+  .icon.open::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+  }
+  
+  .icon.open::before {
+    transform: rotate(45deg) translateY(8px);
+  }
+  
+  .icon.open::after {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+  
+  /* Hide the side navigation completely in mobile view */
+  .side-navigation:not(.open) {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.2s ease-in-out; /* Add transition for smooth animation */
+  }
+  ol, ul
+  {
+    padding :0rem;
+  }
+
+  /* Media query for smaller screens */
+@media (max-width: 768px) {
+  .side-navigation {
+    width: 63vw;
+    z-index:2;
+  }
+
+  .menu-items {
+    padding-top: 2rem;
+    padding-left : 0;
+  }
+
+  
+
+  .menu-icon {
+    display: block; /* Show the toggle button on small screens */
+  }
+
+  /* Hide the side navigation completely in mobile view */
+  .side-navigation:not(.open) {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.2s ease-in-out; /* Add transition for smooth animation */
+  }
+  ol, ul
+  {
+    padding-top :0rem;
+  }
+  .allrec
+  {
+    padding:0;
+  }
+  .table
+  {
+    font-size :11px;
+  }
+}

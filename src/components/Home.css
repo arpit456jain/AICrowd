@@ -1,0 +1,30 @@
+/* App.css */
+
+.app-container {
+    display: flex;
+    height: 100vh; /* Set the container to full viewport height */
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    width : 70vw;
+    background-color: #f6f3f6;
+    margin-left: 15vw; /* Add left margin to accommodate the fixed side navigation */
+    overflow-y: auto;
+  }
+
+  @media (max-width: 768px) {
+    .main-content
+  {
+    margin-left : 0;
+    padding:4px;
+  }
+  .container
+  {
+    padding:6px;
+  }
+  }
+  
+
+  
