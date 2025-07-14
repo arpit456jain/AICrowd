@@ -143,19 +143,19 @@ const VoiceComponent = ({ recordingEnabled, userEmail , totalPoints ,FetchPoints
     ACL: 'public-read',
   };
 
-  const upload = new AWS.S3.ManagedUpload({ params });
-  upload.promise()
-    .then(data => {
-      console.log('Audio uploaded successfully:', data.Location);
-      SavetheAudio(data.Location);
-      AddPoints();
-      FetchPoints(userEmail);
-      setAudioUploaded(true);
-      callApiAndGetResponse();
-    })
-    .catch(err => {
-      console.error('Error uploading audio:', err);
-    }); 
+  // const upload = new AWS.S3.ManagedUpload({ params });
+  // upload.promise()
+  //   .then(data => {
+  //     console.log('Audio uploaded successfully:', data.Location);
+  //     // SavetheAudio(data.Location);
+  //     AddPoints();
+  //     FetchPoints(userEmail);
+  //     // setAudioUploaded(true);
+  //     // callApiAndGetResponse();
+  //   })
+  //   .catch(err => {
+  //     console.error('Error uploading audio:', err);
+  //   }); 
     
   };
 
