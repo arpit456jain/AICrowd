@@ -19,7 +19,8 @@ function Home() {
   
 
   useEffect(() => {
-    const storedUserEmail = localStorage.getItem('userEmail');
+    // const storedUserEmail = localStorage.getItem('userEmail');
+    const storedUserEmail = "111arpit1@gmail.com" ;
     if (storedUserEmail) {
       setUserEmail(storedUserEmail);
       FetchPoints(storedUserEmail);

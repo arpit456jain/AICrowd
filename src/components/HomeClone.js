@@ -13,13 +13,14 @@ import axios from 'axios';
 
 
 function HomeClone() {
-  const [activeComponentIndex, setActiveComponentIndex] = useState(-1);
+  const [voiceComponents, setVoiceComponents] = useState([]);
   const [user_email , setUserEmail] = useState(null);
   const [totalPoints,setTotalPoints] = useState(0);
   
 
   useEffect(() => {
-    const storedUserEmail = localStorage.getItem('userEmail');
+    // const storedUserEmail = localStorage.getItem('userEmail');
+    const storedUserEmail = "111arpit1@gmail.com" ;
     if (storedUserEmail) {
       setUserEmail(storedUserEmail);
       FetchPoints(storedUserEmail);
@@ -28,8 +29,9 @@ function HomeClone() {
   }, []);
 
   const addNewVoiceComponent = () => {
-    setActiveComponentIndex(activeComponentIndex + 1); // Increment the activeComponentIndex
-  };
+  const newIndex = voiceComponents.length;
+  setVoiceComponents([...voiceComponents, newIndex]);
+};
 
   function HandleNewUsers(message){
     console.log("inside handle new users",message);
@@ -100,9 +102,15 @@ function HomeClone() {
               path="/"
               element={
                 <>
-                  {activeComponentIndex >= 0 && (
-                    <VoiceComponent key={activeComponentIndex} recordingEnabled={true} userEmail={user_email} totalPoints={totalPoints} FetchPoints={FetchPoints} />
-                  )}
+                  {voiceComponents.map((index) => (
+                      <VoiceComponent
+                        key={index}
+                        recordingEnabled={true}
+                        userEmail={user_email}
+                        totalPoints={totalPoints}
+                        FetchPoints={FetchPoints}
+                      />
+                    ))}
                   <NewTask onYes={addNewVoiceComponent} onNo={() => {}} />
                 </>
               }
